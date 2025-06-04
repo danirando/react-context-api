@@ -9,31 +9,27 @@ import PostsPage from "./pages/PostsPage";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import PostDetailPage from "./pages/PostDetailPage";
-
+import { PostProvider } from "./contexts/PostsContext";
 export default function App() {
-  const [posts, setPosts] = useState([]);
-  useEffect(() => {
-    axios
-      .get("https://lanciweb.github.io/demo/api/pictures/")
-      .then((res) => setPosts(res.data));
-  }, []);
+  
 
   return (
     <>
-      <BrowserRouter>
+    <PostProvider> <BrowserRouter>
         <Routes>
           <Route element={<DefaultLayout />}>
             <Route path="/" element={<HomePage />} />
             <Route path="/about" element={<AboutPage />} />
-            <Route path="/posts" element={<PostsPage posts={posts} />} />
+            <Route path="/posts" element={<PostsPage />} />
 
             <Route
               path="/posts/:id"
-              element={<PostDetailPage posts={posts} />}
+              element={<PostDetailPage />}
             />
           </Route>
         </Routes>
-      </BrowserRouter>
+      </BrowserRouter></PostProvider>
+     
     </>
   );
 }

@@ -1,5 +1,7 @@
 import { Link, useParams } from "react-router-dom";
-export default function PostDetailPage({ posts }) {
+import { usePost } from "../contexts/PostsContext";
+export default function PostDetailPage() {
+   const {posts} = usePost();
   const { id } = useParams();
 
   const post = posts.find((p) => String(p.id) === id);
