@@ -18,7 +18,7 @@ function PostProvider ({children}) {
 
 function usePost () {
     const context = useContext(PostContext);
-    return context
+    return (context)
 }
 
 export {PostProvider , usePost}
