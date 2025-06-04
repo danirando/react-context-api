@@ -1,0 +1,17 @@
+nav .navbar-nav .nav-link.active,
+.navbar-nav .nav-link.show {
+    color: rgb(13, 110, 253)
+}
+
+.container {
+    margin-top: 2rem;
+    max-height: 100vh;
+}
+
+.container img {
+    max-width: 300px;
+}
+
+.container-links {
+    max-width: 500px;
+}
